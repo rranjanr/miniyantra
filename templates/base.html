@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #1a1a2e;
+        color: #e6e6e6;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      header {
+        background: linear-gradient(90deg, #0f0c29, #302b63, #24243e);
+        padding: 15px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        flex-wrap: wrap; /* Allows wrapping for smaller screens */
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .logo img {
+        height: 50px;
+        margin-right: 15px;
+      }
+
+      .logo span {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      nav {
+        display: flex;
+        gap: 20px;
+        position: relative;
+        flex-wrap: wrap; /* Allows links to wrap on smaller screens */
+        justify-content: center;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #e6e6e6;
+        font-size: 1rem;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #00d4ff;
+      }
+
+      .register-btn {
+        background-color: #00d4ff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        display: inline-block;
+        text-decoration: none;
+        text-align: center;
+        transition: background-color 0.3s;
+        margin-top: -5px; /* Adjusts the button's position */
+      }
+
+      .register-btn:hover {
+        background-color: #00a6cc;
+      }
+
+      footer {
+        background: #0f0c29;
+        color: #b3b3b3;
+        text-align: center;
+        padding: 15px 10px;
+        margin-top: auto;
+      }
+
+      footer a {
+        color: #00d4ff;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      footer a:hover {
+        color: #fff;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        header {
+          padding: 15px 20px;
+          flex-direction: column; /* Stack logo and navigation vertically */
+          align-items: flex-start;
+        }
+
+        .logo span {
+          font-size: 1.5rem; /* Slightly smaller logo text */
+        }
+
+        nav {
+          width: 100%;
+          gap: 10px; /* Reduced gap between links */
+          justify-content: flex-start; /* Align links to the left */
+        }
+
+        .register-btn {
+          width: 100%; /* Full width for button on smaller screens */
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .logo img {
+          height: 40px; /* Smaller logo for very small screens */
+        }
+
+        nav a {
+          font-size: 0.9rem; /* Smaller link font size */
+        }
+
+        footer p {
+          font-size: 0.85rem; /* Reduce footer text size */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    {%include 'navbar.html'%} {%block content%}{%endblock content%}
+    <footer>
+      <p>
+        &copy; 2024 MiniYantra. Designed for robotics enthusiasts.
+        <a href="mailto:contact@pi-innovations.com.np">Contact Us</a>
+      </p>
+    </footer>
+  </body>
+</html>

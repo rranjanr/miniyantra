@@ -1,0 +1,101 @@
+{%extends 'base.html'%} {%block content%}
+<style>
+  .main-content {
+    flex: 1;
+    padding: 40px;
+  }
+
+  .main-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #00d4ff;
+  }
+
+  .main-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #b3b3b3;
+    line-height: 1.6;
+  }
+
+  .events {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .event-card {
+    background-color: #24243e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .event-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .event-card img {
+    max-width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  .event-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #00d4ff;
+  }
+
+  .event-card p {
+    font-size: 1rem;
+    color: #b3b3b3;
+    margin-bottom: 10px;
+  }
+</style>
+
+<div class="main-content">
+  <h1>Our Events</h1>
+  <p>
+    Explore our exciting events designed to foster innovation and creativity in
+    the field of <span class="highlight">Robotics</span>,
+    <span class="highlight">Automation</span>, and
+    <span class="highlight">Artificial Intelligence</span>.
+  </p>
+  <div class="events">
+    <!-- Event Card 1 -->
+    <div class="event-card">
+      <img src="placeholder-event1.png" alt="Robotics Exhibition" />
+      <h3>Robotics Exhibition</h3>
+      <p>
+        Witness cutting-edge robotics projects developed by the brightest minds
+        across Nepal.
+      </p>
+    </div>
+    <!-- Event Card 2 -->
+    <div class="event-card">
+      <img src="placeholder-event2.png" alt="Automation Workshop" />
+      <h3>Automation Workshop</h3>
+      <p>
+        A hands-on session on building automation solutions for real-world
+        challenges.
+      </p>
+    </div>
+    <!-- Event Card 3 -->
+    <div class="event-card">
+      <img src="placeholder-event3.png" alt="AI Hackathon" />
+      <h3>AI Hackathon</h3>
+      <p>
+        Collaborate and compete to create innovative AI-driven solutions in this
+        thrilling hackathon.
+      </p>
+    </div>
+  </div>
+</div>
+{%endblock content%}
