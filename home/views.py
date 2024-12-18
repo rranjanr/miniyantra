@@ -15,3 +15,12 @@ def event(request):
 
 def register(request):
   return render(request, 'home/register.html')
+
+def aboutrobotics(request):
+  return render(request, 'home/aboutrobotics.html')
+
+def aboutautomation(request):
+  return render(request, 'home/aboutautomation.html')
+
+def ai_hackathon(request):
+  return render(request, 'home/ai_hackathon.html')

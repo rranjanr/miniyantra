@@ -1,4 +1,4 @@
-{%extends 'base.html'%} {%block content%}
+{%extends 'base.html'%} {%load static%}{%block content%}
 <style>
   .main-content {
     flex: 1;
@@ -71,7 +71,13 @@
   <div class="events">
     <!-- Event Card 1 -->
     <div class="event-card">
-      <img src="placeholder-event1.png" alt="Robotics Exhibition" />
+      <a href="{% url 'aboutrobotics'  %}">
+        <img
+          src="{%static 'img/robotics_Exhibition.png'%}"
+          alt="Robotics
+      Exhibition"
+        />
+      </a>
       <h3>Robotics Exhibition</h3>
       <p>
         Witness cutting-edge robotics projects developed by the brightest minds
@@ -80,7 +86,12 @@
     </div>
     <!-- Event Card 2 -->
     <div class="event-card">
-      <img src="placeholder-event2.png" alt="Automation Workshop" />
+      <a href="{% url 'aboutautomation'  %}">
+        <img
+          src="{%static 'img/Automation Workshop.png'%}"
+          alt="Automation Workshop"
+        />
+      </a>
       <h3>Automation Workshop</h3>
       <p>
         A hands-on session on building automation solutions for real-world
@@ -89,7 +100,9 @@
     </div>
     <!-- Event Card 3 -->
     <div class="event-card">
-      <img src="placeholder-event3.png" alt="AI Hackathon" />
+      <a href="{% url 'aboutai_hackathon'  %}">
+        <img src="{%static 'img/AI Hackathon.png'%}" alt="AI Hackathon" />
+      </a>
       <h3>AI Hackathon</h3>
       <p>
         Collaborate and compete to create innovative AI-driven solutions in this

@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Detail</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: url("{% static 'img/robotics_background.jpg' %}") no-repeat
+          center center fixed;
+        background-size: cover;
+        color: #e6e6e6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .event-container {
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 15px;
+        padding: 30px;
+        max-width: 800px;
+        width: 90%;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .event-container h1 {
+        font-size: 2.5rem;
+        color: #00d4ff;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .event-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .event-image img {
+        width: 50%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      .event-details p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 10px;
+        color: #b3b3b3;
+      }
+
+      .event-details strong {
+        color: #00d4ff;
+      }
+
+      .btn-back {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #00d4ff;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.1rem;
+        border-radius: 5px;
+        text-align: center;
+        transition: background 0.3s, transform 0.3s;
+      }
+
+      .btn-back:hover {
+        background: #008bb3;
+        transform: translateY(-3px);
+      }
+
+      @media (max-width: 768px) {
+        .event-container h1 {
+          font-size: 2rem;
+        }
+
+        .event-details p {
+          font-size: 1rem;
+        }
+
+        .btn-back {
+          font-size: 1rem;
+          padding: 8px 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="event-container">
+      <h1>Automation Workshop</h1>
+      <div class="event-image">
+        <img
+          src="{% static 'img/Automation Workshop.png' %}"
+          alt="Automation Workshop"
+        />
+      </div>
+      <div class="event-details">
+        <p>
+          The Automation Workshop is an exciting hands-on event focused on
+          teaching participants how to automate everyday tasks using
+          cutting-edge tools and technologies. Learn to build automated systems
+          that improve efficiency in various fields.
+        </p>
+        <p><strong>Date:</strong> February 10-12, 2024</p>
+        <p>
+          <strong>Registration Fees:</strong><br />
+          Early Bird: NPR 3,000 (Nov 24 - Dec 1, 2023)<br />
+          Regular: NPR 4,500 (Dec 2, 2023 - Jan 15, 2024)<br />
+          Late: NPR 6,000 (Jan 16 - Feb 5, 2024)
+        </p>
+        <p>
+          <strong>Topics Covered:</strong><br />
+          - Basics of Automation<br />
+          - Scripting and Workflow Management<br />
+          - Practical Applications in Business
+        </p>
+        <p><strong>Organized by:</strong> Pi innovation</p>
+      </div>
+      <a href="{% url 'event' %}" class="btn-back">Go Back</a>
+    </div>
+  </body>
+</html>
