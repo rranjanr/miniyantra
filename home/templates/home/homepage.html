@@ -1,29 +1,143 @@
-{%extends 'base.html'%}{%block content%}
+{% extends 'base.html' %} {% load static %} {% block content %}
 
 <style>
-  .main-content {
-    flex: 1;
-    padding: 40px;
-    text-align: center;
+  /* General Styles */
+  body {
+    font-family: "Arial", sans-serif;
+    color: #e6e6e6;
+    background: linear-gradient(
+        to bottom,
+        rgba(84, 50, 50, 0.5),
+        /* Top of the gradient */ rgba(0, 0, 0, 0.7)
+          /* Bottom of the gradient */
+      ),
+      url("{% static 'img/homepage.jpg' %}") no-repeat center center/cover;
+    margin: 0;
+    height: 100vh;
   }
 
-  .main-content h1 {
-    font-size: 3rem;
+  /* General Styles */
+  .hero-section {
+    position: relative;
+    display: flex;
+    justify-content: flex-start; /* Aligns content to the left */
+    align-items: flex-start; /* Aligns content to the top */
+    height: 100vh;
+    padding: 40px 20px; /* Adds space below the header */
+    color: #ffffff;
+  }
+
+  .hero-content {
+    text-align: left; /* Align text to the left */
+    max-width: 600px; /* Limit width for better appearance */
+    margin-top: 10px; /* Add margin below the header */
+  }
+
+  .hero-content h1 {
+    font-size: 5rem; /* Slightly smaller for a balanced layout */
     margin-bottom: 20px;
     color: #00d4ff;
   }
 
-  .main-content p {
-    font-size: 1.2rem;
-    color: #b3b3b3;
+  .hero-content p {
+    font-size: 3rem;
+    color: rgb(56, 135, 174);
+  }
+
+  .play-button {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #00d4ff;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .play-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .play-button svg {
+    width: 40px;
+    height: 40px;
+    fill: #121212;
+  }
+
+  .video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  .video-overlay iframe {
+    width: 80%;
+    height: 70%;
+    border: none;
+  }
+
+  .video-overlay .close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #00d4ff;
+    color: #121212;
+    font-size: 1.5rem;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
   }
 </style>
 
-<div class="main-content">
-  <h1>Welcome to MiniYantra</h1>
-  <p>
-    Explore the incredible world of robotics, innovation, and creativity. Join
-    us to celebrate and showcase the best in robotics technology.
-  </p>
+<div class="hero-section">
+  <div class="hero-content">
+    <h1>Welcome to Mini Yantra</h1>
+    <p>Discover the Future of Robotics and Innovation</p>
+  </div>
+  <div class="play-button" onclick="openVideo()">
+    <svg viewBox="0 0 24 24">
+      <path d="M8 5v14l11-7z"></path>
+    </svg>
+  </div>
 </div>
-{%endblock content%}
+
+<div class="video-overlay" id="videoOverlay">
+  <button class="close-button" onclick="closeVideo()">X</button>
+  <iframe
+    id="videoIframe"
+    src=""
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+  ></iframe>
+</div>
+
+<script>
+  function openVideo() {
+    const videoIframe = document.getElementById("videoIframe");
+    videoIframe.src = "https://www.youtube.com/embed/EsGtzvv8oPc";
+    document.getElementById("videoOverlay").style.display = "flex";
+  }
+
+  function closeVideo() {
+    const videoIframe = document.getElementById("videoIframe");
+    videoIframe.src = ""; // Stops video playback
+    document.getElementById("videoOverlay").style.display = "none";
+  }
+</script>
+
+{% endblock content %}

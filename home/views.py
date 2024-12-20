@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import *
 # Create your views here.
 def home(request):
   return render(request, 'home/homepage.html')
@@ -11,7 +11,11 @@ def sponsor(request):
   return render(request, 'home/sponsor.html')
 
 def event(request):
-  return render(request, 'home/event.html')
+  events = Event.objects.all()
+  context = {   
+    'events':events
+  }
+  return render(request, 'home/event.html',context)
 
 def register(request):
   return render(request, 'home/register.html')

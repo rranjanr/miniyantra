@@ -2,7 +2,8 @@
 
 <style>
   .form-container {
-    max-width: 800px; /* Increased width */
+    width: 70%; /* Explicit full width */
+    max-width: 800px; /* Larger width as desired */
     margin: 40px auto;
     padding: 20px;
     background: #24243e;
@@ -83,15 +84,16 @@
       font-size: 1.8rem;
     }
   }
+  /* Simplified media queries */
   @media (max-width: 768px) {
     .form-container {
-      max-width: 90%; /* Retain responsiveness for smaller devices */
+      max-width: 90%; /* Responsive width for smaller devices */
     }
   }
 
   @media (min-width: 1024px) {
     .form-container {
-      max-width: 70%; /* Increase width for larger screens */
+      max-width: 700px; /* Explicit larger width for desktops */
     }
   }
 </style>
