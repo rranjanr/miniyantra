@@ -11,6 +11,16 @@ class Event(models.Model):
 
     def __str__(self): 
         return self.title
+    
+class Registration(models.Model):
+    name = models.CharField(max_length=30)
+    college = models.CharField(max_length=100)
+    phone_number = models.IntegerField()
+    area_of_intrest =models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+
 
 
   

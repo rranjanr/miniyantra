@@ -99,6 +99,13 @@
 </style>
 <body>
   <div class="form-container">
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
     <h1>Register Now</h1>
     <form id="registrationForm" method="post">
       {% csrf_token %}
@@ -142,7 +149,7 @@
       <!-- Choose Type -->
       <div class="form-group">
         <label for="type">Choose Type</label>
-        <select id="type" name="type" required>
+        <select id="type" name="reg_type" required>
           <option value="" disabled selected>Select an area of interest</option>
           <option value="Robotics">Robotics</option>
           <option value="Automation">Automation</option>
